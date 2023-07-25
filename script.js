@@ -18,3 +18,21 @@ function divide (a,b) {
     console.log(a/b);
 }
 divide(10,2)
+
+let number1
+let number2
+let operator 
+
+function operate (num1,operator,num2) {
+    switch (operator) {
+        case '+' :
+            return num1 + num2;
+        case '-':
+            return num1 - num2;
+        case '*':
+            return num1 * num2;
+        case '/':
+            return num1 / num2;
+    }
+}
+ console.log(operate(5,'+',433));
