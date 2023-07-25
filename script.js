@@ -61,6 +61,16 @@ document.addEventListener("DOMContentLoaded", () => {
     minus.addEventListener("click", () => onscreenDisplay(minus.textContent));
     multiply.addEventListener("click", () => onscreenDisplay(multiply.textContent));
     divide.addEventListener("click", () => onscreenDisplay(divide.textContent));
+    equals.addEventListener("click", () => {
+        const expression = display.textContent;
+        const result = eval(expression); // Use eval to evaluate the expression
+        display.textContent = result;
+      });
+
+      clear.addEventListener("click", () => {
+        display.textContent = ""; // Clear the content of the display
+      });
+
 
     btn0.addEventListener("click", () => onscreenDisplay(btn0.textContent));
     btn1.addEventListener("click", () => onscreenDisplay(btn1.textContent));
