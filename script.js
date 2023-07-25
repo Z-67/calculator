@@ -44,6 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const multiply = document.getElementById("multiply");
     const divide = document.getElementById("divide");
     const clear = document.getElementById("clear");
+    const decimal = document.getElementById("decimal")
+    const remove = document.getElementById("remove")
     const equals = document.getElementById("equals");
     const btn0 = document.getElementById("0");
     const btn1 = document.getElementById("1");
@@ -70,8 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
       clear.addEventListener("click", () => {
         display.textContent = ""; // Clear the content of the display
       });
-
-
+    
+    remove.addEventListener("click", () => onscreenDisplay(remove.textContent)); 
+    decimal.addEventListener("click",() => onscreenDisplay(decimal.textContent));
     btn0.addEventListener("click", () => onscreenDisplay(btn0.textContent));
     btn1.addEventListener("click", () => onscreenDisplay(btn1.textContent));
     btn2.addEventListener("click", () => onscreenDisplay(btn2.textContent));
@@ -85,8 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to update the display content
     let onscreenDisplay = function (value) {
-        display.textContent += value;
-    };
-});
+        if (value === "remove") {
+            // If remove button is clicked, remove the last character from the display
+            display.textContent = display.textContent.slice(0, -1);
+          } else {
+            // Otherwise, append the clicked value to the display
+            display.textContent += value;
+          }
+}});
     
 
