@@ -1,0 +1,6 @@
+.display {
+    width: 500px;
+    height: 200px;
+    background-color: #808080; /* Grey color (you can change the color code if needed) */
+    border: 1px solid #000; /* Add a border to make the square visible */
+}
