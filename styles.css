@@ -12,11 +12,12 @@ body {
   }
   
   .display {
-    width: 500px;
-    height: 200px;
+    width: 700px;
+    height: 300px;
     border: 2px solid #000; /* Add a border to make the square visible */
     padding: 20px;
     margin-bottom: 20px;
+    font-size: 30px;
   }
 
 .button-grid {
@@ -27,75 +28,118 @@ body {
     background-color: #000;
   }
 
+  .button-grid button {
+    font-size: 30px; /* Set the font size for the button text */
+    
+    height: 60px; /* Set the height of the buttons */
+  }
 
 #zero {
     background-color: aqua;
+    order: 14;
+    
 }
 
 #one {
     background-color: aqua;
+    order: 9;
+    
 }
 
 #two {
     background-color: aqua;
+    order: 10;
+    
 }
 
 #three {
     background-color: aqua;
+    order: 11;
+    
 }
 
 #four {
     background-color: aqua;
+    order: 5;
+    
 }
 
 #five {
     background-color: aqua;
+    order: 6;
+    
 }
 
 #six {
     background-color: aqua;
+    order: 7;
+    
 }
 
 #seven {
     background-color: aqua;
+    order: 1;
+    
 }
 
 #eight {
     background-color: aqua;
+    order: 2;
+    
 }
 
 #nine {
     background-color: aqua;
+    order: 3;
+    
 }
 
 #DEL {
     background-color: red;
+    order: 4;
+    
 }
 
 #equals {
     background-color:cornsilk;
+    order: 18;
+    
+    
 }
 
 #decimal {
     background-color:cornsilk;
+    order: 13;
+    
 }
 
 #clear {
     background-color:cornsilk;
+    order: 17;
+    
+    
 }
 
 #minus {
     background-color:cornsilk;
+    order: 12;
+    
 }
 
 #plus {
     background-color:cornsilk;
+    order: 8;
+    
 }
 
 #multiply {
     background-color:cornsilk;
+    order: 15;
+    
 }
 
 #divide {
     background-color:cornsilk;
+    order: 16;
+    
 }
