@@ -1,6 +1,103 @@
-.display {
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust the space between the two containers */
+    
+  }
+  
+  .display {
     width: 500px;
     height: 200px;
-    background-color: #808080; /* Grey color (you can change the color code if needed) */
-    border: 1px solid #000; /* Add a border to make the square visible */
+    border: 2px solid #000; /* Add a border to make the square visible */
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+.button-grid {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* Adjust the column width as needed */
+    grid-gap: 10px; /* Adjust the gap between buttons as needed */
+    background-color: #000;
+  }
+
+#zero {
+    background-color: aqua;
+}
+
+#one {
+    background-color: aqua;
+}
+
+#two {
+    background-color: aqua;
+}
+
+#three {
+    background-color: aqua;
+}
+
+#four {
+    background-color: aqua;
+}
+
+#five {
+    background-color: aqua;
+}
+
+#six {
+    background-color: aqua;
+}
+
+#seven {
+    background-color: aqua;
+}
+
+#eight {
+    background-color: aqua;
+}
+
+#nine {
+    background-color: aqua;
+}
+
+#DEL {
+    background-color: red;
+}
+
+#equals {
+    background-color:cornsilk;
+}
+
+#decimal {
+    background-color:cornsilk;
+}
+
+#clear {
+    background-color:cornsilk;
+}
+
+#minus {
+    background-color:cornsilk;
+}
+
+#plus {
+    background-color:cornsilk;
+}
+
+#multiply {
+    background-color:cornsilk;
+}
+
+#divide {
+    background-color:cornsilk;
 }

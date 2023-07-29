@@ -1,42 +1,3 @@
-function add(a,b) {
-    console.log(a+b);
-
-}
-add(1,2);
-
-function subtract (a,b) {
-    console.log(a-b);
-}
-subtract(2,2)
-
-function multiply (a,b) {
-    console.log(a*b);
-}
-multiply(5,5)
-    
-function divide (a,b) {
-    console.log(a/b);
-}
-divide(10,2)
-
-let number1
-let number2
-let operator 
-
-function operate (num1,operator,num2) {
-    switch (operator) {
-        case '+' :
-            return num1 + num2;
-        case '-':
-            return num1 - num2;
-        case '*':
-            return num1 * num2;
-        case '/':
-            return num1 / num2;
-    }
-}
-console.log(operate(5,'+',433));
-
 document.addEventListener("DOMContentLoaded", () => {
     const display = document.querySelector(".display");
     const plus = document.getElementById("plus");
@@ -45,18 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const divide = document.getElementById("divide");
     const clear = document.getElementById("clear");
     const decimal = document.getElementById("decimal")
-    const remove = document.getElementById("remove")
+    const DEL = document.getElementById("DEL")
     const equals = document.getElementById("equals");
-    const btn0 = document.getElementById("0");
-    const btn1 = document.getElementById("1");
-    const btn2 = document.getElementById("2");
-    const btn3 = document.getElementById("3");
-    const btn4 = document.getElementById("4");
-    const btn5 = document.getElementById("5");
-    const btn6 = document.getElementById("6");
-    const btn7 = document.getElementById("7");
-    const btn8 = document.getElementById("8");
-    const btn9 = document.getElementById("9");
+    const btn0 = document.getElementById("zero");
+    const btn1 = document.getElementById("one");
+    const btn2 = document.getElementById("two");
+    const btn3 = document.getElementById("three");
+    const btn4 = document.getElementById("four");
+    const btn5 = document.getElementById("five");
+    const btn6 = document.getElementById("six");
+    const btn7 = document.getElementById("seven");
+    const btn8 = document.getElementById("eight");
+    const btn9 = document.getElementById("nine");
 
     // Add event listeners for button clicks
     plus.addEventListener("click", () => onscreenDisplay(plus.textContent));
@@ -73,22 +34,22 @@ document.addEventListener("DOMContentLoaded", () => {
         display.textContent = ""; // Clear the content of the display
       });
     
-    remove.addEventListener("click", () => onscreenDisplay(remove.textContent)); 
+    DEL.addEventListener("click", () => onscreenDisplay(DEL.textContent)); 
     decimal.addEventListener("click",() => onscreenDisplay(decimal.textContent));
-    btn0.addEventListener("click", () => onscreenDisplay(btn0.textContent));
-    btn1.addEventListener("click", () => onscreenDisplay(btn1.textContent));
-    btn2.addEventListener("click", () => onscreenDisplay(btn2.textContent));
-    btn3.addEventListener("click", () => onscreenDisplay(btn3.textContent));
-    btn4.addEventListener("click", () => onscreenDisplay(btn4.textContent));
-    btn5.addEventListener("click", () => onscreenDisplay(btn5.textContent));
-    btn6.addEventListener("click", () => onscreenDisplay(btn6.textContent));
-    btn7.addEventListener("click", () => onscreenDisplay(btn7.textContent));
-    btn8.addEventListener("click", () => onscreenDisplay(btn8.textContent));
-    btn9.addEventListener("click", () => onscreenDisplay(btn9.textContent));
+    btn0.addEventListener("click", () => onscreenDisplay(zero.textContent));
+    btn1.addEventListener("click", () => onscreenDisplay(one.textContent));
+    btn2.addEventListener("click", () => onscreenDisplay(two.textContent));
+    btn3.addEventListener("click", () => onscreenDisplay(three.textContent));
+    btn4.addEventListener("click", () => onscreenDisplay(four.textContent));
+    btn5.addEventListener("click", () => onscreenDisplay(five.textContent));
+    btn6.addEventListener("click", () => onscreenDisplay(six.textContent));
+    btn7.addEventListener("click", () => onscreenDisplay(seven.textContent));
+    btn8.addEventListener("click", () => onscreenDisplay(eight.textContent));
+    btn9.addEventListener("click", () => onscreenDisplay(nine.textContent));
 
     // Function to update the display content
     let onscreenDisplay = function (value) {
-        if (value === "remove") {
+        if (value === "DEL") {
             // If remove button is clicked, remove the last character from the display
             display.textContent = display.textContent.slice(0, -1);
           } else {
