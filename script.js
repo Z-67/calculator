@@ -62,11 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
 const draggable = document.querySelector(".slider-draggable");
 const numbers = document.querySelectorAll(".number");
 const circleSlider = document.querySelector(".circle-slider");
+const stylesheetLink = document.querySelector("#theme-stylesheet"); // Add this line
 
 let currentIndex = 0;
 
 draggable.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % numbers.length;
+
     const selectedNumber = numbers[currentIndex];
     const sliderRect = circleSlider.getBoundingClientRect();
     const numberRect = selectedNumber.getBoundingClientRect();
@@ -76,4 +78,15 @@ draggable.addEventListener("click", () => {
     numbers.forEach((number, index) => {
         number.style.opacity = index === currentIndex ? 1 : 0.5;
     });
+
+    if (currentIndex === 0) {
+      stylesheetLink.href = "styles.css"; // Back to default stylesheet
+  } else if (currentIndex === 1) {
+      stylesheetLink.href = "styles2.css"; // Apply the second stylesheet
+  } else if (currentIndex === 2) {
+      stylesheetLink.href = "styles3.css"; // Apply the third stylesheet
+  }
 });
+
+
+
