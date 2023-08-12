@@ -1,3 +1,20 @@
+.background-image {
+    --bg-image: url("https://c8.alamy.com/comp/HNRJ4N/on-graph-paper-are-compasses-protractor-ruler-eraser-and-a-pencil-HNRJ4N.jpg");
+    --bg-image-opacity:.5;
+    isolation: isolate;
+}
+
+.background-image::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset:0;
+    opacity:var(--bg-image-opacity);
+    background-image: var(--bg-image) ;
+    background-size: cover;
+    background-position: center;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -6,19 +23,16 @@ body {
     margin: 0;
     flex-direction: column;
   }
-  
-  .calculator {
 
-  }
   
-  .display {
+.display {
     width: 700px;
     height: 300px;
     border: 2px solid #000; /* Add a border to make the square visible */
     padding: 20px;
     margin-bottom: 20px;
     font-size: 30px;
-  }
+}
 
 .button-grid {
     margin-top: 20px;
