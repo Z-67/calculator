@@ -15,6 +15,53 @@
     background-position: center;
 }
 
+/* Default styling for circular slider */
+.circle-slider {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider-draggable {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+}
+
+.slider-numbers {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: -20px;
+    font-size: 20px;
+}
+
+.number {
+    width: 20px;
+    text-align: center;
+}
+
+.theme {
+    top: 230px; 
+    left: 870px; 
+    position: absolute;
+    font-size: 30px;
+}
+
 body {
     display: flex;
     justify-content: center;
