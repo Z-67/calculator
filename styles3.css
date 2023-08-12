@@ -3,7 +3,7 @@
     width: 200px;
     height: 50px;
     border-radius: 50%;
-    background-color: white;
+    background-color: black;
     border: #000;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
 .slider-draggable {
     width: 30px;
     height: 30px;
-    background-color: black;
+    background-color: red;
     border-radius: 50%;
     position: absolute;
     left: 20px;
@@ -69,7 +69,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 100px); /* Adjust the column width as needed */
     grid-column-gap: 60px; /* Adjust the gap between buttons as needed */
-    background-color: #000;
+    
     padding: 7px;
    
     
@@ -82,111 +82,128 @@ body {
   }
 
 #zero {
-    background-color: aqua;
+    background-color: white;
+    border-color: black;
     order: 14;
     
 }
 
 #one {
-    background-color: aqua;
+    background-color: white;
+    border-color: black;
     order: 9;
     
 }
 
 #two {
-    background-color: aqua;
+    background-color: white;
+    border-color: black;
     order: 10;
     
 }
 
 #three {
-    background-color: aqua;
+    background-color: white;
+    border-color: black;
     order: 11;
     
 }
 
 #four {
-    background-color: aqua;
+    background-color: white;
+    border-color: black;
     order: 5;
     
 }
 
 #five {
-    background-color: aqua;
+    background-color: white;
+    border-color: black;
     order: 6;
     
 }
 
 #six {
-    background-color: aqua;
+    background-color: white;
+    border-color: black;
     order: 7;
     
 }
 
 #seven {
-    background-color: aqua;
+    background-color: white;
+    border-color: black;
     order: 1;
     
 }
 
 #eight {
-    background-color: aqua;
+    background-color: white;
+    border-color: black;
     order: 2;
     
 }
 
 #nine {
-    background-color: aqua;
+    background-color: white;
+    border-color: black;
     order: 3;
     
 }
 
 #DEL {
-    background-color: red;
+    background-color: firebrick;
     order: 4;
     
 }
 
 #equals {
-    background-color:cornsilk;
+    background-color: white;
+    border-color: black;
     order: 18;
     
     
 }
 
 #decimal {
-    background-color:cornsilk;
+    background-color: white;
+    border-color: black;
     order: 13;
     
 }
 
 #clear {
-    background-color:cornsilk;
+    background-color: white;
+    border-color: black;
     order: 17;
     
     
 }
 
 #minus {
-    background-color:cornsilk;
+    background-color:black;
+    color: white;
     order: 12;
     
 }
 
 #plus {
-    background-color:cornsilk;
+    background-color:black;
+    color: white;
     order: 8;
     
 }
 
 #multiply {
-    background-color:cornsilk;
+    background-color:black;
+    color: white;
     order: 15;
     
 }
 
 #divide {
-    background-color:cornsilk;
+    background-color:black;
+    color: white;
     order: 16;
     
 }
