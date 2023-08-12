@@ -57,5 +57,23 @@ document.addEventListener("DOMContentLoaded", () => {
             display.textContent += value;
           }
 }});
-    
+  
+//slider//
+const draggable = document.querySelector(".slider-draggable");
+const numbers = document.querySelectorAll(".number");
+const circleSlider = document.querySelector(".circle-slider");
 
+let currentIndex = 0;
+
+draggable.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % numbers.length;
+    const selectedNumber = numbers[currentIndex];
+    const sliderRect = circleSlider.getBoundingClientRect();
+    const numberRect = selectedNumber.getBoundingClientRect();
+
+    const newPositionX = numberRect.left + numberRect.width / 2 - sliderRect.left;
+    draggable.style.left = newPositionX + "px";
+    numbers.forEach((number, index) => {
+        number.style.opacity = index === currentIndex ? 1 : 0.5;
+    });
+});
