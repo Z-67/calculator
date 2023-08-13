@@ -1,3 +1,20 @@
+.background-image {
+    --bg-image: url("https://img.freepik.com/free-photo/top-view-organised-arrangement-desk-elements-pink-background_23-2148513293.jpg?w=2000");
+    --bg-image-opacity:.5;
+    isolation: isolate;
+}
+
+.background-image::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset:0;
+    opacity:var(--bg-image-opacity);
+    background-image: var(--bg-image) ;
+    background-size: cover;
+    background-position: center;
+}
+
 .circle-slider {
     position: relative;
     width: 200px;
