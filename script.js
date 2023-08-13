@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn7 = document.getElementById("seven");
     const btn8 = document.getElementById("eight");
     const btn9 = document.getElementById("nine");
+
+    // Adding event listener for keyboard input
     document.addEventListener("keydown", handleKeyboardInput);
 
     // Add event listeners for button clicks
@@ -36,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         display.textContent = ""; // Clear the content of the display
       });
     
+      // Handling delete, decimal, and numeric button clicks
     DEL.addEventListener("click", () => onscreenDisplay(DEL.textContent)); 
     decimal.addEventListener("click",() => onscreenDisplay(decimal.textContent));
     btn0.addEventListener("click", () => onscreenDisplay(zero.textContent));
@@ -67,8 +70,8 @@ function evaluateExpression() {
       const result = eval(expression);
       display.textContent = result;
   } catch (error) {
-      // Handle errors, such as invalid expressions
-      display.textContent = "Error";
+      
+      display.textContent = "Error"; // Handle errors, such as invalid expressions
   }
 }
 
@@ -95,33 +98,55 @@ function handleKeyboardInput(event) {
 
 
 //slider//
-const draggable = document.querySelector(".slider-draggable");
-const numbers = document.querySelectorAll(".number");
-const circleSlider = document.querySelector(".circle-slider");
-const stylesheetLink = document.querySelector("#theme-stylesheet"); // Add this line
 
+const draggable = document.querySelector(".slider-draggable");
+
+const numbers = document.querySelectorAll(".number");
+
+const circleSlider = document.querySelector(".circle-slider");
+
+// Selecting the link element that controls the stylesheet (CSS)
+const stylesheetLink = document.querySelector("#theme-stylesheet"); // This line finds a <link> tag that controls the styles
+
+// Initializing the index of the currently selected number on the slider
 let currentIndex = 0;
 
+// Adding a click event listener to the "draggable" element
 draggable.addEventListener("click", () => {
+    // Calculate the new index for the slider's position,
+    // wrapping around to the beginning if it exceeds the number of options
     currentIndex = (currentIndex + 1) % numbers.length;
 
+    // Find the DOM element of the selected number using the new index
     const selectedNumber = numbers[currentIndex];
+
+    // Get the bounding rectangle of the "circle-slider" container
     const sliderRect = circleSlider.getBoundingClientRect();
+
+    // Get the bounding rectangle of the selected number element
     const numberRect = selectedNumber.getBoundingClientRect();
 
+    // Calculate the new X position for the draggable element,
+    // ensuring it's centered within the selected number
     const newPositionX = numberRect.left + numberRect.width / 2 - sliderRect.left;
+
+    // Set the new left position of the draggable element
     draggable.style.left = newPositionX + "px";
+
+    // Adjust the opacity of each number element based on the current index
     numbers.forEach((number, index) => {
+        // If the index matches the current index, set full opacity; otherwise, reduce opacity
         number.style.opacity = index === currentIndex ? 1 : 0.5;
     });
 
+    // Apply different stylesheets based on the current index
     if (currentIndex === 0) {
-      stylesheetLink.href = "styles.css"; // Back to default stylesheet
-  } else if (currentIndex === 1) {
-      stylesheetLink.href = "styles2.css"; // Apply the second stylesheet
-  } else if (currentIndex === 2) {
-      stylesheetLink.href = "styles3.css"; // Apply the third stylesheet
-  }
+        stylesheetLink.href = "styles.css"; // Change to default stylesheet
+    } else if (currentIndex === 1) {
+        stylesheetLink.href = "styles2.css"; // Change to the second stylesheet
+    } else if (currentIndex === 2) {
+        stylesheetLink.href = "styles3.css"; // Change to the third stylesheet
+    }
 });
 
 });
