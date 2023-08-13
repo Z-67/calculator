@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn7 = document.getElementById("seven");
     const btn8 = document.getElementById("eight");
     const btn9 = document.getElementById("nine");
+    document.addEventListener("keydown", handleKeyboardInput);
 
     // Add event listeners for button clicks
     plus.addEventListener("click", () => onscreenDisplay(plus.textContent));
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         display.textContent = result;
       });
 
+      
       clear.addEventListener("click", () => {
         display.textContent = ""; // Clear the content of the display
       });
@@ -46,18 +48,52 @@ document.addEventListener("DOMContentLoaded", () => {
     btn7.addEventListener("click", () => onscreenDisplay(seven.textContent));
     btn8.addEventListener("click", () => onscreenDisplay(eight.textContent));
     btn9.addEventListener("click", () => onscreenDisplay(nine.textContent));
+    
+// Function to update the display content
+let onscreenDisplay = function (value) {
+  if (value === "DEL") {
+      // If remove button is clicked, remove the last character from the display
+      display.textContent = display.textContent.slice(0, -1);
+  } else {
+      // Otherwise, append the clicked value to the display
+      display.textContent += value;
+  }
+};
 
-    // Function to update the display content
-    let onscreenDisplay = function (value) {
-        if (value === "DEL") {
-            // If remove button is clicked, remove the last character from the display
-            display.textContent = display.textContent.slice(0, -1);
-          } else {
-            // Otherwise, append the clicked value to the display
-            display.textContent += value;
-          }
-}});
+function evaluateExpression() {
+  const expression = display.textContent;
   
+  try {
+      const result = eval(expression);
+      display.textContent = result;
+  } catch (error) {
+      // Handle errors, such as invalid expressions
+      display.textContent = "Error";
+  }
+}
+
+
+
+// Function to handle keyboard input
+function handleKeyboardInput(event) {
+  const key = event.key;
+  
+  if (!isNaN(key) || key === ".") {
+      // If a valid numeric key or decimal point is pressed, update the display
+      onscreenDisplay(key);
+  } else if (key === "+" || key === "-" || key === "*" || key === "/") {
+      // If an operator key is pressed, update the display
+      onscreenDisplay(key);
+  } else if (key === "Enter") {
+      // If Enter key is pressed, evaluate the expression
+      evaluateExpression();
+  } else if (key === "Backspace") {
+      // If Backspace key is pressed, remove the last character
+      onscreenDisplay("DEL");
+  }
+}
+
+
 //slider//
 const draggable = document.querySelector(".slider-draggable");
 const numbers = document.querySelectorAll(".number");
@@ -88,5 +124,4 @@ draggable.addEventListener("click", () => {
   }
 });
 
-
-
+});
