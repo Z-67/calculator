@@ -112,7 +112,7 @@ const stylesheetLink = document.querySelector("#theme-stylesheet"); // This line
 let currentIndex = 0;
 
 // Adding a click event listener to the "draggable" element
-draggable.addEventListener("click", () => {
+circleSlider.addEventListener("click", () => {
     // Calculate the new index for the slider's position,
     // wrapping around to the beginning if it exceeds the number of options
     currentIndex = (currentIndex + 1) % numbers.length;
