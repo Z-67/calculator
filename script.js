@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const multiply = document.getElementById("multiply");
     const divide = document.getElementById("divide");
     const clear = document.getElementById("clear");
-    const decimal = document.getElementById("decimal")
-    const DEL = document.getElementById("DEL")
+    const decimal = document.getElementById("decimal");
+    const DEL = document.getElementById("DEL");
     const equals = document.getElementById("equals");
     const btn0 = document.getElementById("zero");
     const btn1 = document.getElementById("one");
@@ -105,7 +105,7 @@ const numbers = document.querySelectorAll(".number");
 
 const circleSlider = document.querySelector(".circle-slider");
 
-// Selecting the link element that controls the stylesheet (CSS)
+// Selecting the link element that controls the stylesheet
 const stylesheetLink = document.querySelector("#theme-stylesheet"); // This line finds a <link> tag that controls the styles
 
 // Initializing the index of the currently selected number on the slider
